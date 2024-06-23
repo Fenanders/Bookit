@@ -1,16 +1,27 @@
-# uas_books_yandi
+# Bookit
 
-A new Flutter project.
+Book It is a digital book application designed to enhance your reading experience. It provides an interactive reader, personalized book recommendations, With features like customizable reading settings, Book It makes reading more enjoyable and accessible.
 
-## Getting Started
+## Features:
 
-This project is a starting point for a Flutter application.
+- Digital Library: Organize and manage your collection of digital books.
+- Interactive Reader: Customize your reading experience with normal and night mode.
+- Bookmarks: Add bookmarks and favorites your books.
+- Book Recommendations: Get personalized book suggestions based on your reading preferences.
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshot of the app:
+In-progress
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Installation:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Firstly, this project using 3.22.2 version and using Dart 3.4.3, hope you guys using the same version :)
+
+- Clone the repository: git clone https://github.com/yourusername/BookIt.git
+- Navigate to the project directory: cd BookIt
+- Install dependencies: flutter pub get
+- Run the application: flutter run
+
+### TL;DR
+
+This project was created for the final exam to fulfil the requirement of the mobile programming subject
+in STMIK AMIK Bandung
