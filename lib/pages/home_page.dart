@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uas_books_yandi/screens/widgets/horizontal_item_book.dart';
+import 'package:uas_books_yandi/helper/data_theme.dart';
+import 'package:uas_books_yandi/widgets/horizontal_item_book.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class HomePage extends StatelessWidget {
             children: [
               Text(
                 'Discover your best books now',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
               SizedBox(height: 8),
               Text(
@@ -30,7 +31,7 @@ class HomePage extends StatelessWidget {
                   prefixIcon: Icon(Icons.search),
                 ),
               ),
-              SizedBox(height: 16),
+              SizedBox(height: 24),
               Expanded(
                 child: ListView(
                   children: [
@@ -70,9 +71,18 @@ class SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
+        Text(
+          'See More',
+          style: Theme.of(context).textTheme.labelSmall,
+        ),
+      ],
     );
   }
 }

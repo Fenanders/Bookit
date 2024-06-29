@@ -1,22 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:uas_books_yandi/screens/pages/home_page.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:uas_books_yandi/helper/theme_changer.dart';
+import 'package:uas_books_yandi/pages/home_page.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:uas_books_yandi/screens/bookmark_page.dart';
-import 'package:uas_books_yandi/screens/pages/profile_page.dart';
+import 'package:uas_books_yandi/pages/bookmark_page.dart';
+import 'package:uas_books_yandi/pages/profile_page.dart';
+import 'package:uas_books_yandi/splash_screen.dart';
+import 'package:uas_books_yandi/helper/data_theme.dart';
 
-class MainScreen extends StatelessWidget {
+void main() {
+  runApp( ChangeNotifierProvider(
+      create: (_) => ThemeModel(ThemeData.light()),
+      child: MainScreen(),
+    ),);
+}
+
+class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
   @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  bool _darkMode = true;
+  final DataTheme _dataTheme = DataTheme();
+
+  @override
+  void initState() {
+    super.initState();
+    _loadTheme();
+  }
+
+  _loadTheme() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _darkMode = prefs.getBool('darkMode') ?? false;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final theme = Provider.of<ThemeModel>(context);
+    
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Book Discovery',
-      theme: ThemeData(
-        textTheme: GoogleFonts.poppinsTextTheme(),
-        primarySwatch: Colors.orange,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Navigation(),
+      theme: theme.themeData,
+      home: SplashScreen(),
     );
   }
 }
@@ -63,7 +95,7 @@ class _NavigationState extends State<Navigation> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.orange,
+        selectedItemColor: Theme.of(context).primaryColor,
         onTap: _onItemTapped,
       ),
     );
