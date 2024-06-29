@@ -55,12 +55,12 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           ListTile(
             title: Text("Username"),
-            subtitle: Text("JohnDoe"),
+            subtitle: Text("Yandi Fenanda"),
             leading: Icon(Icons.person),
           ),
           ListTile(
             title: Text("Email"),
-            subtitle: Text("johndoe@example.com"),
+            subtitle: Text("yandifenanda.247@gmail.com"),
             leading: Icon(Icons.email),
           ),
           ListTile(
@@ -70,7 +70,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           ListTile(
             title: Text("About Me"),
-            subtitle: Text("This is a description about John Doe."),
+            subtitle: Text("Mahasiswa STMIK AMIK Bandung."),
             leading: Icon(Icons.info_outline),
           ),
           ListTile(
