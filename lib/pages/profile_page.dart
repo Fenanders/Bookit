@@ -39,11 +39,11 @@ class _ProfilePageState extends State<ProfilePage> {
     final dataTheme = new DataTheme();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
       body: ListView(
         children: <Widget>[
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(20.0),
             child: Center(
               child: CircleAvatar(
@@ -53,28 +53,28 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
           ),
-          ListTile(
+          const ListTile(
             title: Text("Username"),
             subtitle: Text("Yandi Fenanda"),
             leading: Icon(Icons.person),
           ),
-          ListTile(
+          const ListTile(
             title: Text("Email"),
             subtitle: Text("yandifenanda.247@gmail.com"),
             leading: Icon(Icons.email),
           ),
-          ListTile(
+          const ListTile(
             title: Text("Phone"),
             subtitle: Text("+1234567890"),
             leading: Icon(Icons.phone),
           ),
-          ListTile(
+          const ListTile(
             title: Text("About Me"),
             subtitle: Text("Mahasiswa STMIK AMIK Bandung."),
             leading: Icon(Icons.info_outline),
           ),
           ListTile(
-            title: Text("Set To Dark Mode"),
+            title: const Text("Set To Dark Mode"),
             subtitle: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -90,7 +90,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
               ],
             ),
-            leading: Icon(Icons.dark_mode),
+            leading: const Icon(Icons.dark_mode),
           ),
         ],
       ),
